@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <div class="ui main text container segment">
+            <div class="ui huge header"><%= bookmark.title %></div>
+            <div class="ui top attached ">
+                <div class="item">
+                    <div class="ui huge header"><%= bookmark.name %></div>
+                    <div class="content">
+                        <span><%= blog.created.toDateString() %></span>
+        
+                    </div>
+                    <div class="description">
+                        <P><%= bookmark.publiser %></P>
+        
+                    </div>
+                    
+                    <form action="/bookmark/<%=bookmark._id %>?_method=DELETE" method="POST">
+                    <button class="ui red basic button">delete</button></form>
+                </div>
+            </div>
+    </body>
+</html>
