@@ -1,0 +1,19 @@
+<%- include('header') %>
+<h1>hey this is a bookmark page</h1>
+
+<% bookmark.forEach(function(bookmark){ %>
+<div>
+    <a href="<%= bookmark.link %>"> <h2><%= bookmark.title %></h2></a>a>
+    
+   <span><%= bookmark.created %></span>
+   <a href="/bookmark/<%= bookmark._id %>">Read more</a>
+   
+
+
+   
+
+</div>
+
+<% }) %>
+<a href="fdk">create a new tag</a>
+<%- include('footer') %>

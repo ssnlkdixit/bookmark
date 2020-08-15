@@ -1,0 +1,33 @@
+<%- include('header') %>
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= bookmark.title %></div>
+    <div class="ui top attached ">
+        <div class="item">
+            <P><%= bookmark.link %></P>
+            <div class="content">
+                <span><%= bookmark.created.toDateString() %></span>
+
+            </div>
+           
+            <a class="ui orange basic button" href="/bookmark/<%= bookmark._id %>/edit">Edit</a>
+            <form action="/bookmark/<%= bookmark._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">delete</button></form>
+        </div>
+    </div>
+    <p>
+        <a href="/bookmark/<%= bookmark._id %>/tag/new">add new tag</a>
+    </p>
+    <% bookmark.tag.forEach(function(tags){ %>
+        <strong><p><%= tags.author %></strong>- <%= tags.text %></p>
+         
+    
+    
+    <% }) %>
+    
+     
+   
+   
+   
+</div>
+
+<%- include('footer') %>
